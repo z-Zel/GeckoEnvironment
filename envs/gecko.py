@@ -67,7 +67,7 @@ class Gecko(MujocoEnv, utils.EzPickle):
             exclude_current_positions_from_observation
         )
 
-        obs_shape = 47
+        obs_shape = 31
         if not exclude_current_positions_from_observation:
             obs_shape += 2
         if use_contact_forces:
@@ -175,7 +175,6 @@ class Gecko(MujocoEnv, utils.EzPickle):
             contact_force = self.contact_forces.flat.copy()
             return np.concatenate((position, velocity, contact_force))
         else:
-            print(np.concatenate((position, velocity)))
             return np.concatenate((position, velocity))
 
     def reset_model(self):
