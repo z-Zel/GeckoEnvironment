@@ -175,6 +175,7 @@ class Gecko(MujocoEnv, utils.EzPickle):
             contact_force = self.contact_forces.flat.copy()
             return np.concatenate((position, velocity, contact_force))
         else:
+            print(np.concatenate((position, velocity)))
             return np.concatenate((position, velocity))
 
     def reset_model(self):
